@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenZonebot Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatui.css') }}">
+</head>
+<body>
+    <div class="chatbox">
+        <div class="header">
+            <div class="chatbot-name"><h2>ZenZonebot</h2></div>
+            <div class="close-btn"></div>
+        </div>
+        <div class="chat-container">
+            <ul class="chat-messages">
+                <li class="bot-message">Hello my name is ZenZonebot. What should I call you?"</li>
+                <li class="bot-message"></li>
+            </ul>
+        </div>
+        <div class="chat-input">
+            <textarea id="user-message" placeholder="Enter a prompt here"></textarea>
+            <button id="send-btn">Send</button>
+            <a href="{{ url_for('home') }}"><button id="back">back</button></a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sendButton = document.getElementById('send-btn');
+            const userMessageInput = document.getElementById('user-message');
+            const chatMessages = document.querySelector('.chat-messages');
+
+            // Function to add user message to chat interface
+            function addUserMessage(message) {
+                const userMessageElement = document.createElement('li');
+                userMessageElement.className = 'user-message';
+                userMessageElement.textContent = message;
+                chatMessages.appendChild(userMessageElement);
+            }
+
+            // Function to add bot message to chat interface
+            function addBotMessage(message) {
+                const botMessageElement = document.createElement('li');
+                botMessageElement.className = 'bot-message';
+                botMessageElement.innerHTML = message; // Use innerHTML to allow line breaks
+                chatMessages.appendChild(botMessageElement);
+            }
+
+            // Function to send user message to backend and handle bot response
+            async function sendMessage() {
+                const userMessage = userMessageInput.value.trim();
+                if (userMessage === '') return;
+
+                addUserMessage(userMessage);
+
+                const response = await fetch('/process_input', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ user_prompt: userMessage })
+                });
+
+                const responseData = await response.json();
+                const botResponse = responseData.message;
+
+                addBotMessage(botResponse);
+
+                // Clear user input field after sending message
+                userMessageInput.value = '';
+            }
+
+            // Event listener for send button click
+            sendButton.addEventListener('click', sendMessage);
+
+            // Event listener for Enter key press in user input
+            userMessageInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

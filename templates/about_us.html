@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us- ZEN ZONE BOT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about_us.css') }}">
+    <style>
+        #main_para {
+
+          text-align: justify;
+        }
+        #main_para ul {
+            list-style-type: none;
+            padding-left: 0;
+            max-width: 1200px;
+        }
+        #main_para li {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="{{ url_for('static', filename='videos/giphy.mp4') }}" type="video/mp4">
+  </video>
+  <header>
+    <nav>
+      <a href="{{ url_for('home') }}" ><button class="button-85" role="button">Home</button></a>
+      <a href="{{ url_for('about_us') }}" ><button class="button-85" role="button">About us</button></a>
+      <button class="button-85" role="button" onmouseover="showContact()">Contact Us</button>
+      <div id="contactInfo">
+        <p>Email: info@ZenZone.com</p>
+        <p>Phone: (555) 555-5555</p>
+      </div>
+    </nav>
+  </header>
+      
+    <main>
+      <section class="head">
+        
+        <h1 id="neon">About Us</h1>
+          <p><h3>Your go-to destination for mental health support and resources</h3></p>
+        </section>  
+        <section class="concept">
+            <h2>Welcome to ZenZone Bot!</h2>
+            <h5 id="main_para">
+                <ul>
+                    <li>It is your trusted platform for mental health support and resources.</li>
+                    <li>We understand that dealing with mental health issues can be challenging, which is why we're here to offer a helping hand and a listening ear to those in need.</li>
+                    <li>We are committed to promoting mental well-being and providing support for individuals struggling with various mental health conditions.</li>
+                    <li>Our platform is designed to offer guidance, support, and resources to help you on your journey towards healing and recovery, whether you're dealing with depression, anxiety disorders, PTSD, ADHD, eating disorders, or any other mental health issue.</li>
+                    <li>Our chatbot is at the heart of our platform, providing a safe and confidential space for users to express themselves and receive personalized support.</li>
+                    <li>We offer access to a wealth of resources provided by the government, including helpline numbers, support groups, and information about available mental health schemes and services.</li>
+                    <li>We believe in empowering individuals to take control of their mental health journey by connecting them with the resources and support they need to thrive.</li>
+                    <li>At ZenZone, we prioritize confidentiality, empathy, and non-judgmental support in everything we do.</li>
+                    <li>Our team of qualified counselors and mental health professionals are here to listen, support, and guide you through your challenges, offering counseling services and access to helpful resources every step of the way.</li>
+                    <li>No matter what you're going through, remember that you're not alone. We are here to support you, empower you, and help you take the first steps towards a healthier, happier life.</li>
+                    <li>Together, we can break the stigma surrounding mental health and create a more supportive and understanding community for all.</li>
+                    <li>Take the first step towards a brighter self-confident & joyful future!</li>
+                </ul>
+            </h5>
+        </section>
+
+        <section class="energy">
+            <h2 id="disclaimer:">Disclaimer</h2>
+            <p id="neon-dis"> <h5> Our chatbot complements but does not replace professional medical advice. We encourage users to seek help from qualified psychologists and doctors for personalized diagnosis and treatment.
+            </h5>
+            </p>
+        </section>
+
+        <section class="team">
+            <h2>Meet the Team members</h2>
+            <p><h5>Take a look below to see a glimpse of our fantastic team. Each member brings a unique perspective and a whole lot of talent to the table.</h5></p>
+            <div class="team-members">
+              <img src="{{ url_for('static', filename='images/paushali.jpg') }}" alt="Paushali" title="Paushali">
+              <img src="{{ url_for('static', filename='images/mridul.jpg') }}" alt="Mridul" title="Mridul">
+              <img src="{{ url_for('static', filename='images/avir.jpg') }}" alt="Avir" title="Avir">
+              <img src="{{ url_for('static', filename='images/suhani.jpg') }}" alt="Suhani" title="Suhani">
+              <img src="{{ url_for('static', filename='images/samragee.jpg') }}" alt="Samragee" title="Samragee">
+                </div>
+            <div class="member-info">  <span></span> </div>
+        </section>
+        <div id="k">ALONE?  </div> 
+<div > 
+  <span><p id="alone"> <h2>You are not alone!!</h2></p> </span>
+</div>
+
+        <section class="passion">
+            <h2 class="animated-text">Join us on ZenZone bot and take the first step towards a healthier, happier life..</h2> <p></p>
+        </section>
+    </main> 
+    <script>
+      function showContact() {
+        const contactInfo = document.getElementById("contactInfo");
+        contactInfo.style.display = "block";
+      }
+      
+      document.addEventListener("mouseout", function(event) {
+        const contactInfo = document.getElementById("contactInfo");
+        if (event.target.tagName !== "SPAN") {
+          contactInfo.style.display = "none";
+        }
+      });
+    </script>   
+</body>
+</html>

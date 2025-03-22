@@ -1,0 +1,178 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set body height to 100% viewport height */
+    width: 100vw; /* Set body width to 100% viewport width */
+    font-family: sans-serif;
+}
+
+.chatbox {
+    width: 100%; /* Set chatbox width to 100% */
+    height: calc(100vh - 30px); /* Adjust height for potential header size */
+    background-color: #323334;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.chatbot-name {
+    font-weight: bold;
+    font-size: xx-large;
+
+}
+
+.close-btn {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chat-container {
+    flex: 1;
+    overflow-y: scroll;
+    padding: 20px;
+    box-shadow:0px 100px 100px black ;
+    
+    border-style: double;
+    border-radius: 25px;
+    
+}
+
+.chat-messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bot-message {
+    background-color: #534f4f;
+    align-self: flex-start;
+}
+
+.user-message {
+    background-color: #474343;
+    align-self: flex-end;
+}
+
+.chat-input {
+    padding: 15px 20px;
+    display: flex;
+}
+
+#user-message {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    resize: none;
+}
+
+#send-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 3px;
+
+}
+
+#back {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    margin-left: 3px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+
+#myvideo{
+    object-fit: fill;
+width: 100__;
+}
+
+
+
+@keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+    30% { 
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+  }
+  
+  body {
+    margin: 0;
+    font: 100% / 1.5 Raleway, sans-serif;
+    color: hsl(230, 100%, 95%);
+    background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));
+    height: 100vh;
+    display: flex;
+  }
+  
+  h2 {
+    margin: auto;
+    font-size: 3.5rem;
+    font-weight: 300;
+    animation: lights 5s 750ms linear infinite;
+  }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZENZONE BOT</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="{{ url_for('static', filename='videos/giphy.mp4') }}" type="video/mp4">
+  </video>
+  <header>
+    <nav>
+      <button class="button-85" role="button" href="#" onclick="window.location.reload()">Home</button>
+      <a href="{{ url_for('about_us') }}" ><button class="button-85" role="button">About us</button></a>
+      <button class="button-85" role="button" onmouseover="showContact()">Contact Us</button>
+      <div id="contactInfo">
+        <p>Email: info@ZenZone.com</p>
+        <p>Phone: (555) 555-5555</p>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <h1>Welcome to ZenZone Bot!</h1>
+    <p>Get ready to experience conversations in a whole new way.</p>
+    <a href="{{ url_for('chatui') }}" ><button class="button-64" role="button"><span class="text"  onclick="alert('Let\'s chat! Click OK to start a conversation with our chatbot.')">Start Coversation</span></button></a>
+  </main>
+  <script>
+    function showContact() {
+      const contactInfo = document.getElementById("contactInfo");
+      contactInfo.style.display = "block";
+    }
+    
+    document.addEventListener("mouseout", function(event) {
+      const contactInfo = document.getElementById("contactInfo");
+      if (event.target.tagName !== "SPAN") {
+        contactInfo.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
