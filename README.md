@@ -1,13 +1,14 @@
-# ZenZoneBot
+# 🤖 ZenZoneBot  
 
-ZenZoneBot is a Flask-based AI chatbot designed to assist users in understanding their emotional state, detecting potential mental health concerns, and providing helpful resources. The chatbot uses sentiment analysis, disorder keyword detection, and intent prediction to generate meaningful responses.
+ZenZoneBot is a **Flask-based AI chatbot** designed to assist users in understanding their emotional state, detecting potential mental health concerns, and providing helpful resources.  
+The bot leverages **sentiment analysis, disorder keyword detection, and intent prediction** to deliver meaningful, context-aware responses.  
 
-## Features
-- Sentiment analysis to detect user emotions.
-- Disorder keyword detection to identify potential mental health concerns.
-- Intent prediction to understand user needs (e.g., seeking advice, resources, or emotional support).
-- Context-aware conversation flow.
-- Provides helpful self-care tips and resources for mental health support.
+
+## ✨ Features
+- 🧠 **Sentiment Analysis** – Detects user emotions (joy, fear, anger, sadness, etc.)  
+- 🩺 **Disorder Keyword Detection** – Identifies potential mental health concerns  
+- 🎯 **Intent Prediction** – Understands user needs (advice, resources, emotional support)  
+- 🔄 **Context-Aware Conversations** – Maintains flow of interaction
 
 ## Installation
 
@@ -21,7 +22,7 @@ Make sure you have the following installed on your system:
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/ZenZoneBot.git
+   git clone https://github.com/mondal-paushali03/ZenZoneBot.git
    cd ZenZoneBot
    ```
 2. Install dependencies:
@@ -99,5 +100,5 @@ ZenZoneBot/
 This project is licensed under the MIT License.
 
 ## Contact
-For questions or suggestions, feel free to reach out at mridulchawla20@example.com.
+For questions or suggestions, feel free to reach out at mondal.paushali384@gmail.com.
 
