@@ -33,14 +33,7 @@ Make sure you have the following installed on your system:
    ```bash
    python app.py
    ```
-
-### Where to Run
-After starting the Flask application, open your browser and go to:
-   ```
-   http://127.0.0.1:5000/
-   ```
-This will open the chatbot interface where you can interact with ZenZoneBot.
-
+   
 ## Project Structure
 ```
 ZenZoneBot/
@@ -101,4 +94,3 @@ This project is licensed under the MIT License.
 
 ## Contact
 For questions or suggestions, feel free to reach out at mondal.paushali384@gmail.com.
-
